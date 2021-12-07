@@ -58,9 +58,7 @@ router.post("/api/orders", checkToken, async (req, res, next) => {
 
     const { products } = req.body;
 
-    // if (!products) {
-    //   throw new ApiError(404, "Every order must have a product!");
-    // }
+
 
     let customer = req.user.sub;
     const data = await orders.create({ customer, products });
